@@ -1,4 +1,5 @@
-
+package library;
+import library.core.Title;
 
 /**
  * This class represents a journal that is offered by the library.

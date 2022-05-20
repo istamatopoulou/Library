@@ -1,16 +1,18 @@
+package library.core;
 import java.util.Map;
+import library.Book;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class Library {
+public class LibraryMaps {
 
 	private Map<Integer, Member> members;
 	private Map<Integer, Title> titles;
 	private Map<Integer, Borrowable> borrowables;
 
-	public Library() {
+	public LibraryMaps() {
 		members = new HashMap<Integer, Member>();
 		titles = new HashMap<Integer, Title>();
 		borrowables = new HashMap<Integer, Borrowable>();

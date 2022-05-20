@@ -1,11 +1,19 @@
+package library;
 
 
 import java.util.Scanner;
+import library.core.Borrowable;
+import library.core.LibraryLists;
+import library.core.LibraryMaps;
+import library.core.Member;
+import library.exceptions.AvailabilityException;
+import library.exceptions.CannotBeReturnedByMemberException;
+import library.exceptions.LoanLimitException;
 
 
 public class LibraryProgram {
 
-	static Library lib = new Library();
+	static LibraryLists lib = new LibraryLists();
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -65,8 +73,13 @@ public class LibraryProgram {
 
 		m = lib.findMemberByID(memberID);
 		b = lib.findBorrowableByID(borID);
-		m.borrows(b);
-
+		try {
+			m.borrows(b);
+		}
+		catch(AvailabilityException | LoanLimitException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
 	}
 
 	public static void returnLoan() {
@@ -85,7 +98,14 @@ public class LibraryProgram {
 
 		m = lib.findMemberByID(memberID);
 		b = lib.findBorrowableByID(borID);
-		m.returns(b);
+		try {
+			m.returns(b);
+		}
+		catch (CannotBeReturnedByMemberException | AvailabilityException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
 
 	}
 }

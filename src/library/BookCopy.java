@@ -1,4 +1,6 @@
-
+package library;
+import library.core.Borrowable;
+import library.exceptions.AvailabilityException;
 
 /**
  * This class represents an actual copy of a book that is offered by the library.
@@ -10,8 +12,6 @@ public class BookCopy implements Borrowable{
 	private int id;
 	private boolean available;
 	private Book book;
-
-
 
 	/**
 	 * @param id
@@ -39,15 +39,19 @@ public class BookCopy implements Borrowable{
 	}
 
 	@Override
-	public void isBeingBorrowed() {
-		if (available)
-			available = false;
+	public void borrowItem() throws AvailabilityException {
+		if (!available)
+			throw new AvailabilityException("The book copy with id:\" + id + \" which is a copy of the book: \" + book.getTitle() + \" cannot be borrowed; it is already borrowed.");
+			
+		available = false;
 	}
 
 	@Override
-	public void isBeingReturned(){
-		if(!available)
-			available = true;
+	public void returnItem() throws AvailabilityException {
+		if(available)
+			throw new AvailabilityException("The book copy with id:" + id + " which is a copy of the book: " + book.getTitle() + " cannot be returned; it is already available.");
+		
+		available = true;
 	}
 
 	@Override

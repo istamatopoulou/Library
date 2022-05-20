@@ -1,3 +1,4 @@
+package library.core;
 
 /**
  * This class represents a title that is offered by the library.
@@ -23,11 +24,6 @@ public class Title {
 		this.title = title;
 	}
 
-	@Override
-	public String toString() {
-		return "Title [id=" + id + ", title=" + title + "]";
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -38,6 +34,11 @@ public class Title {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	@Override
+	public String toString() {
+		return "Title [id=" + id + ", title=" + title + "]";
 	}
 
 
