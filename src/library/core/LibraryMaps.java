@@ -1,4 +1,5 @@
 package library.core;
+
 import java.util.Map;
 import library.Book;
 import java.util.HashMap;
@@ -18,7 +19,7 @@ public class LibraryMaps {
 		borrowables = new HashMap<Integer, Borrowable>();
 	}
 
-	public void addMember(int id, String name){
+	public void addMember(int id, String name) {
 		if (!members.containsKey(id)) {
 			members.put(id, new Member(id, name));
 		}
@@ -26,7 +27,7 @@ public class LibraryMaps {
 
 	public void addTitle(Title title) {
 		int id = title.getId();
-		if(!titles.containsKey(id))
+		if (!titles.containsKey(id))
 			titles.put(id, title);
 		//else THROW EXCEPTION
 	}
@@ -38,7 +39,7 @@ public class LibraryMaps {
 		//else THROW EXCEPTION
 	}
 
-	public void displayAllMembers(){
+	public void displayAllMembers() {
 		System.out.println("\nLIBRARY'S MEMBERS:\n");
 		Collection<Member> allMembers = members.values();
 		for (Member m : allMembers) {
@@ -76,32 +77,32 @@ public class LibraryMaps {
 	}
 
 	public Borrowable findBorrowableByID(int id) {
-		if(borrowables.containsKey(id))
+		if (borrowables.containsKey(id))
 			return borrowables.get(id);
 		else
 			return null;
 	}
 
-	public Title findTitleByID(int id){
-		if(titles.containsKey(id))
+	public Title findTitleByID(int id) {
+		if (titles.containsKey(id))
 			return titles.get(id);
 		else
 			return null;
 	}
 
-	public Member findMemberByID(int id){
-		if(members.containsKey(id))
+	public Member findMemberByID(int id) {
+		if (members.containsKey(id))
 			return members.get(id);
 		else
 			return null;
 	}
-	
+
 	public String[] getAllBooksInfo() {
 		List<String> allBookData = new ArrayList<String>();
 		Collection<Title> allTitles = titles.values();
-		for(Title t: allTitles) {
-			if(t instanceof Book) {
-				allBookData.add("\"" + t.getTitle() + "\", " + ((Book)t).getAuthor());
+		for (Title t : allTitles) {
+			if (t instanceof Book) {
+				allBookData.add("\"" + t.getTitle() + "\", " + ((Book) t).getAuthor());
 			}
 		}
 		return allBookData.toArray(new String[0]);

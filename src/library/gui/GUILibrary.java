@@ -1,16 +1,17 @@
 package library.gui;
+
 import javax.swing.*;
-import library.Book;
-import library.core.LibraryMaps;
+import library.*;
+import library.core.*;
 import java.awt.*;
 import java.awt.event.*;
 
 //google Menus in java
 //add a menu to your window with the options: Books, Journals, Members, Loans
 
-public class GUILibrary extends JFrame implements ActionListener{
+public class GUILibrary extends JFrame implements ActionListener {
 	// declare all components as attributes of your class
-	LibraryMaps library;
+	LibraryLists library;
 
 	JFrame frame;
 	JMenuBar menuBar;
@@ -34,7 +35,7 @@ public class GUILibrary extends JFrame implements ActionListener{
 	JLabel authorLb;
 
 	GUILibrary() {
-		library = new LibraryMaps();
+		library = new LibraryLists();
 
 		// set the title for your window
 		this.setTitle("Library System");
@@ -102,8 +103,6 @@ public class GUILibrary extends JFrame implements ActionListener{
 		buttonsPanel.add(clearBt);
 		buttonsPanel.add(addBt);
 
-
-
 		// ADDING CONTAINERS TO THE CONTENT PANEL
 		contentPanel.add(menuBar, BorderLayout.NORTH);
 		// add the mainPanel to the centre area of the
@@ -118,18 +117,18 @@ public class GUILibrary extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent event) {
 		String action = event.getActionCommand();
 
-		if(action.equals("View All")) {
+		if (action.equals("View All")) {
 			library.getAllBooksInfo();
 			JFrame allBooks = new GUIViewAll(library.getAllBooksInfo());
 			allBooks.setVisible(true);
 
 		}
-		else if(action.equals("Clear Fields")) {
+		else if (action.equals("Clear Fields")) {
 			idTf.setText("");
 			titleTf.setText("");
 			authorTf.setText("");
 		}
-		else if(action.equals("Add Book")) {
+		else if (action.equals("Add Book")) {
 			int id = Integer.parseInt(idTf.getText());
 			String title = titleTf.getText();
 			String author = authorTf.getText();

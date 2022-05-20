@@ -1,4 +1,5 @@
 package library.exceptions;
+
 @SuppressWarnings("serial")
 
 public class AvailabilityException extends Exception {

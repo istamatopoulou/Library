@@ -1,10 +1,12 @@
 package library;
+
 import library.core.Title;
 
 /**
- * This class represents a journal that is offered by the library.
- * (i.e. the existence of a journal, not an actual copy).
- * The class extends the Title class (a journal is a kind of title offered by the library)
+ * This class represents a journal that is offered by the library. (i.e. the
+ * existence of a journal, not an actual copy). The class extends the Title
+ * class (a journal is a kind of title offered by the library)
+ * 
  * @see Title
  * @author istamatopoulou
  */
@@ -27,8 +29,7 @@ public class Journal extends Title {
 
 	@Override
 	public String toString() {
-		return "Journal [editor=" + editor + ", " + super.toString()
-				+ "]";
+		return "Journal [editor=" + editor + ", " + super.toString() + "]";
 	}
 
 }

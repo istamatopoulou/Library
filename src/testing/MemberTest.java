@@ -21,7 +21,7 @@ public class MemberTest {
 		BookCopy bc5 = new BookCopy(105, b);
 		BookCopy bc6 = new BookCopy(106, b);
 		BookCopy bc7 = new BookCopy(107, b);
-		
+
 		Member m = new Member(123, "ioanna");
 		try {
 			m.borrows(bc1);
@@ -33,10 +33,10 @@ public class MemberTest {
 			m.borrows(bc7);
 			fail("Should throw an exception if member cannot borrow more");
 		}
-		catch(LoanLimitException e) {
+		catch (LoanLimitException e) {
 			assertThat(e, isA(LoanLimitException.class));
 		}
-		catch(AvailabilityException e) {
+		catch (AvailabilityException e) {
 			assertThat(e, isA(AvailabilityException.class));
 		}
 	}

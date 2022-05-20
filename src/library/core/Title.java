@@ -1,8 +1,9 @@
 package library.core;
 
 /**
- * This class represents a title that is offered by the library.
- * It does NOT represent an actual copy.
+ * This class represents a title that is offered by the library. It does NOT
+ * represent an actual copy.
+ * 
  * @author istamatopoulou
  */
 public class Title {
@@ -35,11 +36,10 @@ public class Title {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Title [id=" + id + ", title=" + title + "]";
 	}
-
 
 }

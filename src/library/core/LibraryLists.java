@@ -2,6 +2,7 @@ package library.core;
 
 import java.util.Collection;
 import java.util.List;
+import library.Book;
 import library.exceptions.*;
 //import library.*;
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class LibraryLists {
 
 	public void displayAllMembers() {
 		System.out.println("\nLIBRARY'S MEMBERS:\n");
-		
+
 		for (Member m : members) {
 			System.out.println(m + "\n");
 		}
@@ -91,5 +92,15 @@ public class LibraryLists {
 				return m;
 		}
 		return null;
+	}
+
+	public String[] getAllBooksInfo() {
+		List<String> allBookData = new ArrayList<String>();
+		for (Title t : titles) {
+			if (t instanceof Book) {
+				allBookData.add("\"" + t.getTitle() + "\", " + ((Book) t).getAuthor());
+			}
+		}
+		return allBookData.toArray(new String[0]);
 	}
 }

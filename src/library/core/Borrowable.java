@@ -1,11 +1,10 @@
 package library.core;
-import library.exceptions.AvailabilityException;
 
+import library.exceptions.AvailabilityException;
 
 /**
  * @author istamatopoulou
  */
-
 
 public interface Borrowable {
 	public void borrowItem() throws AvailabilityException;

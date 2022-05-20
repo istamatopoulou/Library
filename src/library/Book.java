@@ -1,10 +1,12 @@
 package library;
+
 import library.core.Title;
 
 /**
- * This class represents a book that is offered by the library,
- * (i.e. the existence of a book, not an actual copy).
- * The class extends the Title class (a book is a kind of title offered by the library)
+ * This class represents a book that is offered by the library, (i.e. the
+ * existence of a book, not an actual copy). The class extends the Title class
+ * (a book is a kind of title offered by the library)
+ * 
  * @see Title
  * @author istamatopoulou
  */
@@ -29,7 +31,6 @@ public class Book extends Title {
 
 	@Override
 	public String toString() {
-		return "Book [author=" + author + ", " + super.toString()
-				+ "]";
+		return "Book [author=" + author + ", " + super.toString() + "]";
 	}
 }
