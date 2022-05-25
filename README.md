@@ -13,6 +13,5 @@ Everything we have done in class throughout the semester. Additionally:
 -- Note that in both its versions, the Library class contains more methods than we had time to do in class, which you may find interesting!
 - A "dummy" program, which is not so dummy! Study and run the `LibraryProgram`. In the uploaded version, it creates an object of the `LibraryLists` class (line 15). However, you may chage this to create an object of the `LibraryMaps` class.
 - To run the version with the Graphical User Interface we created in class, run `GUImain`.
-- 
 
 
